@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tela",
+  "type": "registry:component",
+  "title": "Peças de tela",
+  "description": "CabecalhoTela, TituloBloco e Variacao.",
+  "dependencies": [
+    "@hugeicons/react",
+    "@hugeicons/core-free-icons"
+  ],
+  "files": [
+    {
+      "path": "registry/heimdall/tela.tsx",
+      "type": "registry:component",
+      "target": "components/heimdall/tela.tsx",
+      "content": "/**\n * Peças de tela do Heimdall: cabeçalho da página, título de bloco e selo de variação.\n * Não dependem de rota nem de dados; o app compõe o botão de voltar e o seletor de período por fora.\n */\nimport type * as React from \"react\"\nimport { HugeiconsIcon } from \"@hugeicons/react\"\nimport { ArrowDownRight01Icon, ArrowUpRight01Icon } from \"@hugeicons/core-free-icons\"\n\nimport { cn } from \"@/lib/utils\"\n\ntype CabecalhoTelaProps = {\n  titulo: React.ReactNode\n  descricao?: React.ReactNode\n  /** Antes do título: botão de voltar, ícone ou selo. */\n  inicio?: React.ReactNode\n  /** À direita: seletores, botões e filtros da tela. */\n  acoes?: React.ReactNode\n  className?: string\n}\n\n/** Primeiro bloco de toda tela: ocupa a largura toda da grade e segura título, descrição e ações. */\nexport function CabecalhoTela({ titulo, descricao, inicio, acoes, className }: CabecalhoTelaProps) {\n  return (\n    <section className={cn(\"heimdall-block flex flex-col gap-4 p-5 md:flex-row md:items-center md:p-6 lg:col-span-4\", className)}>\n      <div className=\"flex min-w-0 flex-1 items-center gap-4\">\n        {inicio}\n        <div className=\"flex min-w-0 flex-col gap-1\">\n          <h1 className=\"text-2xl font-semibold tracking-tight\">{titulo}</h1>\n          {descricao ? <div className=\"text-sm text-muted-foreground\">{descricao}</div> : null}\n        </div>\n      </div>\n      <div className=\"flex flex-wrap items-center gap-2 empty:hidden\">{acoes}</div>\n    </section>\n  )\n}\n\n/** Título pequeno de bloco, com um detalhe opcional à direita. */\nexport function TituloBloco({ children, detalhe }: { children: React.ReactNode; detalhe?: React.ReactNode }) {\n  return (\n    <div className=\"flex items-baseline justify-between gap-3\">\n      <h2 className=\"font-semibold tracking-tight\">{children}</h2>\n      {detalhe ? <span className=\"text-xs text-muted-foreground\">{detalhe}</span> : null}\n    </div>\n  )\n}\n\ntype VariacaoProps = {\n  atual: number\n  anterior: number\n  /** Unidade exibida depois do número, como \"pts\". */\n  unidade?: string\n  /** Se subir é bom (aderência) ou se descer é bom (alertas). */\n  melhor?: \"maior\" | \"menor\"\n  className?: string\n}\n\n/** Variação contra o período anterior: verde quando melhora, âmbar quando piora, cinza quando não muda. */\nexport function Variacao({ atual, anterior, unidade = \"\", melhor = \"maior\", className }: VariacaoProps) {\n  const delta = atual - anterior\n  if (delta === 0) {\n    return <span className={cn(\"rounded-full bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground\", className)}>estável</span>\n  }\n  const bom = melhor === \"maior\" ? delta > 0 : delta < 0\n  return (\n    <span\n      className={cn(\n        \"inline-flex items-center gap-0.5 rounded-full px-2 py-0.5 text-xs font-medium tabular-nums\",\n        bom ? \"bg-success/10 text-success\" : \"bg-chart-sem-warning/15 text-[color-mix(in_oklch,var(--chart-sem-warning)_70%,var(--foreground))]\",\n        className\n      )}\n    >\n      <HugeiconsIcon icon={delta > 0 ? ArrowUpRight01Icon : ArrowDownRight01Icon} strokeWidth={2} className=\"size-3.5\" />\n      {delta > 0 ? \"+\" : \"−\"}\n      {Math.abs(delta)}\n      {unidade ? ` ${unidade}` : \"\"}\n    </span>\n  )\n}\n"
+    }
+  ]
+}

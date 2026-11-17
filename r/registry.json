@@ -1,0 +1,55 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "heimdall",
+  "homepage": "https://paulofga86.github.io/heimdall-design-system",
+  "items": [
+    {
+      "name": "kit",
+      "type": "registry:item",
+      "title": "Kit Heimdall completo",
+      "description": "Instala a camada CSS, todos os componentes do Heimdall e o guia para IA."
+    },
+    {
+      "name": "heimdall-css",
+      "type": "registry:file",
+      "title": "Camada visual Heimdall",
+      "description": "Tokens, blocos (heimdall-block, heimdall-block-primary), linhas e microinterações. Importe no CSS global depois dos tokens do Marsala."
+    },
+    {
+      "name": "tela",
+      "type": "registry:component",
+      "title": "Peças de tela",
+      "description": "CabecalhoTela, TituloBloco e Variacao."
+    },
+    {
+      "name": "icone-tom",
+      "type": "registry:component",
+      "title": "Ícone de tom",
+      "description": "Ícone em círculo tingido com a cor da área do produto."
+    },
+    {
+      "name": "filtros",
+      "type": "registry:component",
+      "title": "Filtros em pílula",
+      "description": "LinhaFiltros, FiltroMultiplo, FiltroUnico, FiltroAtalhos, SemResultado e opcoesDe."
+    },
+    {
+      "name": "abas",
+      "type": "registry:component",
+      "title": "Abas em pílula",
+      "description": "TrilhoAbas e Aba sobre as Tabs do Marsala."
+    },
+    {
+      "name": "logo",
+      "type": "registry:component",
+      "title": "Logo do Heimdall",
+      "description": "Símbolo oficial (elmo alado) em quadrado vinho ou só o traço."
+    },
+    {
+      "name": "heimdall-skill",
+      "type": "registry:file",
+      "title": "Guia do Heimdall DS para IA",
+      "description": "SKILL.md com as regras e a anatomia de tela, para Claude Code, Cursor e outros assistentes."
+    }
+  ]
+}

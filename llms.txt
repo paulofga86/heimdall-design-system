@@ -1,0 +1,14 @@
+# Heimdall Design System
+
+> Camada visual do Heimdall sobre o Marsala DS (React, Tailwind v4, shadcn base-nova, Base UI, Hugeicons). Blocos arredondados sobre fundo cinza, um bloco vinho por tela na coluna da direita, cores com significado por área, filtros em pílula e a marca Heimdall.
+
+## Para implementar
+- [Guia para IA (leia primeiro)](https://paulofga86.github.io/heimdall-design-system/heimdall-ds.md): instalação, regras, anatomia de tela, componentes e checklist.
+- [Registro shadcn](https://paulofga86.github.io/heimdall-design-system/r/registry.json): itens instaláveis com `pnpm dlx shadcn@latest add @heimdall/<item>` (namespace "@heimdall": "https://paulofga86.github.io/heimdall-design-system/r/{name}.json").
+- [Arquivos crus do kit](https://paulofga86.github.io/heimdall-design-system/kit/): heimdall.css, tela.tsx, icone-tom.tsx, filtros.tsx, abas.tsx, logo.tsx, simbolo-heimdall.ts.
+
+## Base
+- [Marsala DS](https://marsala-ds.youxgroup.com.br/): componentes base obrigatórios.
+
+## Exemplos
+- [Protótipo navegável do Heimdall](https://paulofga86.github.io/heimdall-prototipo/): telas reais montadas com este design system.

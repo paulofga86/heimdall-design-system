@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kit",
+  "type": "registry:item",
+  "title": "Kit Heimdall completo",
+  "description": "Instala a camada CSS, todos os componentes do Heimdall e o guia para IA.",
+  "registryDependencies": [
+    "https://paulofga86.github.io/heimdall-design-system/r/heimdall-css.json",
+    "https://paulofga86.github.io/heimdall-design-system/r/tela.json",
+    "https://paulofga86.github.io/heimdall-design-system/r/icone-tom.json",
+    "https://paulofga86.github.io/heimdall-design-system/r/filtros.json",
+    "https://paulofga86.github.io/heimdall-design-system/r/abas.json",
+    "https://paulofga86.github.io/heimdall-design-system/r/logo.json",
+    "https://paulofga86.github.io/heimdall-design-system/r/heimdall-skill.json"
+  ],
+  "files": []
+}

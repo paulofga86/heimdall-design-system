@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "abas",
+  "type": "registry:component",
+  "title": "Abas em pílula",
+  "description": "TrilhoAbas e Aba sobre as Tabs do Marsala.",
+  "registryDependencies": [
+    "@youxgroup/tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/heimdall/abas.tsx",
+      "type": "registry:component",
+      "target": "components/heimdall/abas.tsx",
+      "content": "/**\n * Abas de página no padrão Heimdall: trilho em pílula com contorno discreto, aba ativa como pílula cheia\n * e suave (mesma linguagem dos seletores Lista/Quadro). Substitui o sublinhado do Marsala, que dentro de\n * um trilho arredondado virava uma curva vinho e deixava o texto colado na borda.\n * Ajustes aplicados por fora (o componente do Marsala não é editado): ver README §16.\n */\nimport type * as React from \"react\"\n\nimport { TabsList, TabsTrigger } from \"@/components/ui/tabs\"\nimport { cn } from \"@/lib/utils\"\n\nexport function TrilhoAbas({ className, children, ...props }: React.ComponentProps<typeof TabsList>) {\n  return (\n    <TabsList\n      className={cn(\n        // O Marsala traz sublinhado e espaçamento largo para abas; aqui o trilho é uma pílula com pílulas dentro.\n        \"heimdall-block h-auto! w-fit max-w-full gap-1! overflow-x-auto rounded-full p-1 text-muted-foreground\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </TabsList>\n  )\n}\n\nexport function Aba({ className, ...props }: React.ComponentProps<typeof TabsTrigger>) {\n  return (\n    <TabsTrigger\n      className={cn(\n        \"mb-0! h-9 shrink-0 rounded-full border-0! px-3! pb-0! text-sm sm:px-4! transition-[background-color,color,box-shadow] duration-200\",\n        \"hover:bg-muted/60 hover:text-foreground\",\n        \"data-active:bg-muted data-active:text-foreground data-active:shadow-[0_1px_2px_rgb(15_15_25/0.06)] dark:data-active:bg-muted\",\n        \"focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n"
+    }
+  ]
+}
